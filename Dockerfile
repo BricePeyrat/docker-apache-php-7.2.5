@@ -7,6 +7,9 @@ RUN apt-get install -y vim
 
 RUN a2enmod rewrite
 
+# Install php extension
+RUN docker-php-ext-install pdo pdo_mysql
+
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
 
